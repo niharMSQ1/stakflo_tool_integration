@@ -1,0 +1,6 @@
+Migrations for `tools_integrations_models` use database `TOOLS_INTEGRATIONS_DB_NAME` from the project `.env`.
+
+From project root:
+
+  alembic revision --autogenerate -m "describe change"
+  alembic upgrade head
