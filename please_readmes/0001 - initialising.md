@@ -6,6 +6,16 @@ hi, I am starting multiple tool integrations categorised as HRMS, IDP, ITSM, IAM
 
 I have shared some png images which is inside the folder `db_structure` which are structure of required tables which I need to work upon.
 
+### Uniqueness and updates
+
+- **`tool_integrations`** — The pair `(organization_id, tool_id)` is **unique**. There must never be two rows for the same org and tool; if credentials or config change, **update** the existing row (do not insert a second row).
+
+- **`evidence`** — For a given `organization_id`, **`title` must be unique** across all rows for that org (the same title cannot appear twice for the same organization). When evidence is collected again for the same org and title, **update** the existing row (do not insert a duplicate).
+
+In both tables above, the intended behaviour is **upsert-style**: match on the unique key and **only update** when the row already exists.
+
+**Full replace on update** — When updating an existing row in either table, **clear or discard the previous payload entirely** first, then **write the new data as a full replacement**. Do not merge or patch over old fields; the new state must always be written as if the old row’s content were erased and replaced wholesale.
+
 ---
 
 ## Sample payload
