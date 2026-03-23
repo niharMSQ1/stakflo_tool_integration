@@ -1,0 +1,72 @@
+# =========================
+# ENV FILES
+# =========================
+.env
+.env.*
+*.env
+
+# =========================
+# PYTHON CACHE FILES
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# VIRTUAL ENVIRONMENTS
+# =========================
+venv/
+.env/
+env/
+ENV/
+
+# =========================
+# BUILD / DIST
+# =========================
+build/
+dist/
+*.egg-info/
+
+# =========================
+# LOGS
+# =========================
+*.log
+
+# =========================
+# IDE / EDITOR FILES
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# SYSTEM FILES
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# ROOT-LEVEL FOLDERS (customize)
+# =========================
+# Add your project-specific folders here
+data/
+uploads/
+temp/
+tmp/
+prompts/
+db_structure/
+logs/
+
+# =========================
+# DATABASE FILES
+# =========================
+*.sqlite3
+*.db
+
+# =========================
+# TEST / CACHE
+# =========================
+.pytest_cache/
+.coverage
+htmlcov/
